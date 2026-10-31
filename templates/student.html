@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f3f6fb;
+        }
+
+        .navbar{
+            background:#1e3a8a;
+            color:white;
+            padding:18px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .navbar h2{
+            font-size:24px;
+        }
+
+        .logout{
+            text-decoration:none;
+            background:#ef4444;
+            color:white;
+            padding:10px 20px;
+            border-radius:6px;
+            font-weight:bold;
+        }
+
+        .container{
+            width:90%;
+            max-width:1000px;
+            margin:30px auto;
+        }
+
+        .welcome{
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            margin-bottom:25px;
+            box-shadow:0 4px 10px rgba(0,0,0,.1);
+        }
+
+        .welcome h1{
+            color:#1e3a8a;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            margin-bottom:25px;
+            box-shadow:0 4px 10px rgba(0,0,0,.1);
+        }
+
+        .card h3{
+            color:#1e3a8a;
+            margin-bottom:20px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        table td{
+            padding:14px;
+            border-bottom:1px solid #ddd;
+        }
+
+        table td:first-child{
+            font-weight:bold;
+            width:220px;
+            color:#374151;
+        }
+
+        .summary{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:20px;
+        }
+
+        .box{
+            background:#1e3a8a;
+            color:white;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        .box h2{
+            margin-bottom:10px;
+            font-size:32px;
+        }
+
+        .status-paid{
+            color:#16a34a;
+            font-weight:bold;
+        }
+
+        .status-pending{
+            color:#dc2626;
+            font-weight:bold;
+        }
+
+        @media(max-width:768px){
+            .summary{
+                grid-template-columns:1fr 1fr;
+            }
+        }
+
+        @media(max-width:500px){
+            .summary{
+                grid-template-columns:1fr;
+            }
+
+            .navbar{
+                flex-direction:column;
+                gap:10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Student Portal</h2>
+        <a href="/" class="logout">Logout</a>
+    </div>
+
+    <div class="container">
+
+        <!-- Welcome -->
+        <div class="welcome">
+            <h1>Welcome, {{ student.Full_Name }}</h1>
+            
+        </div>
+
+        <!-- Student Information -->
+        <div class="card">
+            <h3>Student Information</h3>
+
+            <table>
+                <tr>
+                    <td>Student ID</td>
+                    <td>{{ student.ID }}</td>
+                </tr>
+
+                <tr>
+                    <td>Full Name</td>
+                    <td>{{ student.Full_Name }}</td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>{{ student.Gender }}</td>
+                </tr>
+
+                <tr>
+                    <td>Date of Birth</td>
+                    <td>{{ student.Birth }}</td>
+                </tr>
+
+                <tr>
+                    <td>Major</td>
+                    <td>{{ student.Major_Name }}</td>
+                </tr>
+
+                <tr>
+                    <td>Phone</td>
+                    <td>{{ student.Phone }}</td>
+                </tr>
+
+                
+            </table>
+        </div>
+
+        <!-- Score Summary -->
+        <div class="card">
+            <h3>Academic Result</h3>
+
+            <div class="summary">
+
+                <div class="box">
+                    <h2>{{ student.Total_Score }}</h2>
+                    <p>Total Score</p>
+                </div>
+
+                <div class="box">
+                    <h2>{{ student.AVG }}</h2>
+                    <p>Average</p>
+                </div>
+
+                <div class="box">
+                    <h2>{{ student.Grade }}</h2>
+                    <p>Grade</p>
+                </div>
+
+               
+
+            </div>
+        </div>
+
+        <!-- Payment -->
+        <div class="card">
+            <h3>Payment Status</h3>
+
+            <table>
+                <tr>
+                    <td>Payment Status</td>
+                    <td>
+                        
+                            <span class="status-paid">{{student.Status}}</span>
+                        
+                            
+                        
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Amount</td>
+                    <td>{{ student.Amount }}</td>
+                </tr>
+
+                <tr>
+                    <td>Payment Date</td>
+                    <td>{{ student.Payment_Date }}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>

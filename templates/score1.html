@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Registration</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <form action="/score_frontend/{{id}}" method="POST">
+                          <!-- <div class="mb-3">
+                            <label>Student ID</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="id"
+                                >
+                        </div> -->
+
+                        <div class="mb-3">
+                            <label>HTML Score</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="html"
+                                >
+                        </div>
+
+                        <!-- <div class="mb-3">
+                            <label>JAVA Score</label>
+                           <input
+                                type="text"
+                                class="form-control"
+                                name="java"
+                                >
+                        </div> -->
+
+                        <div class="mb-3">
+                            <label>CSS Score</label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                name="css"
+                                >
+                        </div>
+<!-- 
+                        <div class="mb-3">
+                            <label>SQL Score</label>
+                           <input
+                                type="text"
+                                class="form-control"
+                                name="sql"
+                                >
+                        </div> -->
+
+                        <div class="mb-3">
+                            <label> JavaScript Score</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="javascript"
+                                >
+                        </div>
+                        <div class="mb-3">
+                            <label>Boostrap Score</label>
+                           <input
+                                type="text"
+                                class="form-control"
+                                name="bootstrap"
+                                >
+                        </div>
+                        
+                        
+                        <div>
+                          <button class="btn btn-primary w-25 float-end " type="submit">
+                            Submit</button>
+                      
+                        </div>
+                        <div>
+                           <a href="/clas1" class="btn btn-secondary ">Back</a>
+                        </div>
+                        
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+  

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/static/login.css"> -->
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+}
+
+
+/* Login box */
+.R {
+    width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+form {
+    text-align: center;
+}
+
+
+h1 {
+    margin-bottom: 30px;
+    color: #0d6efd;
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+
+input:focus {
+    border-color: #0d6efd;
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 25px;
+    background: #0d6efd;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+button:hover {
+    background: #084298;
+    transform: translateY(-3px);
+}
+
+
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    .R {
+        width: 80%;
+        padding: 30px;
+    }
+
+
+    h1 {
+        font-size: 28px;
+    }
+
+}
+
+
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    .R {
+        width: 90%;
+        padding: 25px;
+    }
+
+
+    h1 {
+        font-size: 24px;
+    }
+
+
+    input {
+        padding: 10px;
+    }
+
+
+    button {
+        font-size: 16px;
+    }
+
+}
+</style>
+<body>
+     <div class="R">
+              <form method="POST" action="/admin_login">
+                  <h1>Admin Login</h1>
+                <input type="text "  placeholder="Enter Name" name="admin_name" >
+                <br>
+                <input type="password"   placeholder="Enter Password Here" name="pwd">
+                <br>
+                <button type="submit"  >Login</button> 
+               
+                
+             
+               </form>
+
+
+
+
+            </div> 
+
+ </body>
+</html>
+
+<!-- <script>
+function voice2() {
+    event.preventDefault(); // stop form submission temporarily
+
+    let audio = document.getElementById("voice");
+    audio.play();
+
+    audio.onended = function () {
+        event.target.form.submit(); // submit after audio finishes
+    };
+}
+</script> -->
